@@ -9,7 +9,7 @@ function RequestForm() {
 function handlesubmit(e){
 e.preventDefault()
 
-const requests={name, pickup, destination, number_of_passangers}
+const requests={name, pickup, destination, number_of_passangers ,reported:false, comment_on_repoort:""}
 
   fetch("http://localhost:3001/requests",{
     method:"POST",

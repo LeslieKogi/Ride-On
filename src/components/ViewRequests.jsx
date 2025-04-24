@@ -16,7 +16,7 @@ function ViewRequests() {
     },[])
   return (
     <div>
-      {requests && <RequestCard requests={requests}/>} 
+      {requests && <RequestCard requests={requests} />} 
     </div>
   )
 }
