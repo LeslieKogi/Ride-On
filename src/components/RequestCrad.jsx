@@ -1,6 +1,11 @@
 import React from "react";
 
 function RequestCard({requests}){
+function handleCancel(){
+  console.log ("cancel")
+}
+
+
     const requestList=requests.map ((request)=>{
         return (
           <div key={request.id} className="border ml-5 mr-5 py-4 p bg-indigo-400 rounded-md">
@@ -8,7 +13,7 @@ function RequestCard({requests}){
             <p>{request.pickup}</p>
             <p>{request.destination}</p>
             <p>{request.number_of_passangers}</p>
-            <button className="bg-blue-500 p-2 border border-black rounded-md m-3">Cancel</button>
+            <button onClick={handleCancel} className="bg-blue-500 p-2 border border-black rounded-md m-3">Cancel</button>
             <button className="bg-red-500 p-2 border border-black rounded-md m-3">Report</button>
           </div>
         );

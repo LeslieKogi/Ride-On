@@ -4,12 +4,12 @@ function RequestForm() {
   const [name, setName]=useState('')
   const [pickup, setPickUp]=useState('')
   const [destination,setDestination]=useState('')
-  const [numberOfPassengers,setNumberOfPassengers]=useState(0)
+  const [number_of_passangers, setNumber_of_passengers] = useState(0);
 
 function handlesubmit(e){
 e.preventDefault()
 
-const requests={name, pickup, destination, numberOfPassengers}
+const requests={name, pickup, destination, number_of_passangers}
 
   fetch("http://localhost:3001/requests",{
     method:"POST",
@@ -68,8 +68,8 @@ const requests={name, pickup, destination, numberOfPassengers}
             Number of passengers
           </label>
           <input
-            value={numberOfPassengers}
-            onChange={(e) => setNumberOfPassengers(Number(e.target.value))}
+            value={number_of_passangers}
+            onChange={(e) => setNumber_of_passengers(Number(e.target.value))}
             type="number"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             required
