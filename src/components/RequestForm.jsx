@@ -25,8 +25,8 @@ const requests={name, pickup, destination, number_of_passangers ,reported:false,
     <div>
       <form
         onSubmit={handlesubmit}
-        className="max-w-sm mx-auto bg-black p-5 border border-rounded mt-12"
-      >
+        className="max-w-sm mx-auto bg-black p-5 border border-rounded mt-12">
+          <div><p className='text-white p-3 font-semibold'>Make a ride request to your desired destination</p></div>
         <div className="mb-5">
           <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
             Your Name
