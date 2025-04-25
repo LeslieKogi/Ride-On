@@ -1,18 +1,10 @@
 import React from "react";
 
-function RequestCard({requests}){
-
-
-function handleCancel(requestId){
-  fetch(`http://localhost:3001/requests/${requestId}`,{
-    method:"DELETE"
-  })
-  .then (()=>{
-    console.log("Deleted")
-  })
-
-}
-
+function RequestCard({requests,handleCancel}){
+  
+  function handleReport(){
+    console.log ("Reported")
+  }
 
     const requestList=requests.map ((request)=>{
         return (
@@ -22,7 +14,7 @@ function handleCancel(requestId){
             <p className="font-semibold text-lg">Destination {request.destination}</p>
             <p className="text-red-400">Number of passengers {request.number_of_passangers}</p>
             <button onClick={()=>handleCancel(request.id)} className="bg-stone-600 p-2 border border-black rounded-md m-3">Cancel</button>
-            <button className="bg-red-500 p-2 border border-black rounded-md m-3">Report</button>
+            <button onClick={handleReport} className="bg-red-500 p-2 border border-black rounded-md m-3">Report</button>
           </div>
         );
     })

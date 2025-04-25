@@ -14,9 +14,18 @@ function ViewRequests() {
         })
 
     },[])
+
+    function handleCancel(requestId) {
+      fetch(`http://localhost:3001/requests/${requestId}`, {
+        method: "DELETE",
+      }).then(() => {
+        const updateRequests=requests.filter((req)=> req.id !==requestId)
+        setRequests(updateRequests)
+      });
+    }
   return (
     <div>
-      {requests && <RequestCard requests={requests} />} 
+      {requests && <RequestCard requests={requests} handleCancel={handleCancel}/>} 
     </div>
   )
 }
