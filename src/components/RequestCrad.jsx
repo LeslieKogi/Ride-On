@@ -1,10 +1,7 @@
 import React from "react";
 
-function RequestCard({requests,handleCancel}){
-  
-  function handleReport(){
-    console.log ("Reported")
-  }
+
+function RequestCard({requests,handleCancel, handleReport}){
 
     const requestList=requests.map ((request)=>{
         return (
@@ -14,7 +11,7 @@ function RequestCard({requests,handleCancel}){
             <p className="font-semibold text-lg">Destination {request.destination}</p>
             <p className="text-red-400">Number of passengers {request.number_of_passangers}</p>
             <button onClick={()=>handleCancel(request.id)} className="bg-stone-600 p-2 border border-black rounded-md m-3">Cancel</button>
-            <button onClick={handleReport} className="bg-red-500 p-2 border border-black rounded-md m-3">Report</button>
+            <button onClick={()=>handleReport(request.id)} className="bg-red-500 p-2 border border-black rounded-md m-3">Report</button>
           </div>
         );
     })
