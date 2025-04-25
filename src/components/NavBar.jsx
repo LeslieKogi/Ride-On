@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function NavBar() {
   return (
@@ -7,14 +8,14 @@ function NavBar() {
         <h1 className="text-xl font-poppins">RIDE ON</h1>
         <ul className="text-lg flex gap-6 ">
           <li>
-            <a href="" className="font-poppins hover:text-violet-800">
+            <Link to="/" className="font-poppins hover:text-violet-800">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="" className="font-poppins hover:text-violet-800">
+            <Link to="/requests" className="font-poppins hover:text-violet-800">
               View Requests
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
