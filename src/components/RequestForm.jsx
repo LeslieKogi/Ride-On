@@ -1,4 +1,6 @@
 import React,{useState} from 'react'
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function RequestForm() {
   const [name, setName]=useState('')
@@ -18,11 +20,20 @@ const requests={name, pickup, destination, number_of_passangers ,reported:false,
   })
   .then(()=>{
     console.log("new request added")
+    toast.success("Request submitted successfully!");
+    setName('')
+    setPickUp('')
+    setDestination('')
+    setNumber_of_passengers(0)
+  })
+  .catch (()=>{
+    toast.error("Submission failed")
   })
 
 }
   return (
     <div>
+      <ToastContainer/>
       <form
         onSubmit={handlesubmit}
         className="max-w-sm mx-auto bg-black p-5 border border-rounded mt-12">
