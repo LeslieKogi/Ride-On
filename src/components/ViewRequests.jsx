@@ -48,7 +48,10 @@ function ViewRequests() {
   return (
     <div>
        <SearchBar search={search} setSearch={setSearch} />
-      {filterRequests  && <RequestCard requests={filterRequests} handleCancel={handleCancel} handleReport={handleReport}/>} 
+      {filterRequests.length>0 ?( 
+        <RequestCard requests={filterRequests} handleCancel={handleCancel} handleReport={handleReport}/>)
+      :(<p className='text-center text-red-500 font-semibold mt-4'>No request found</p>)
+      } 
       {showReportFrom && 
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
        <ReportForm requestId={selectRequestId} onClose={handleClose}/>
