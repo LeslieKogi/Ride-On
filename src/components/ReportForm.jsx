@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import Swal from "sweetalert2";
 
 function ReportForm({requestId,onClose}) {
 const [comment,SetComment]=useState('')
@@ -13,6 +14,12 @@ const [comment,SetComment]=useState('')
         .then ((res)=>res.json())
         .then ((data)=>{
             console.log("Report submitted",data)
+            SetComment("")
+            Swal.fire({
+              title: "Reported",
+              icon: "success",
+              draggable: true,
+            });
         })
         
     }
@@ -25,7 +32,7 @@ const [comment,SetComment]=useState('')
       <label>Comment on report</label>
       <input value={comment} onChange={(e)=>SetComment(e.target.value)} type="text" />
       <button type='submit' className='border p-2 ml-4 bg-black text-white rounded mt-4'>Submit</button>
-      <button onClick={onClose} className='bg-black text-white p-2 border rounded ml-5 ' >close</button>
+      <button onClick={onClose} className='bg-stone-200 text-black p-1 border rounded ml-5 ' >close</button>
     </form>
   );
 }

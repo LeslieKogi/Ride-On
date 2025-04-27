@@ -21,6 +21,7 @@ const requests={name, pickup, destination, number_of_passangers ,reported:false,
   .then(()=>{
     console.log("new request added")
     toast.success("Request submitted successfully!");
+    
     setName('')
     setPickUp('')
     setDestination('')

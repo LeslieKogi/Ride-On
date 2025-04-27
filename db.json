@@ -7,7 +7,7 @@
       "destination": "Hagan",
       "number_of_passangers": 2,
       "reported": true,
-      "comment_on_report": " driver was uncouth"
+      "comment_on_report": "Driver was rude"
     },
     {
       "id": "e507",
@@ -15,8 +15,8 @@
       "pickup": "Nyayo stadium",
       "destination": "thika road mall",
       "number_of_passangers": 3,
-      "reported": false,
-      "comment_on_report": ""
+      "reported": true,
+      "comment_on_report": "I was overcharged"
     },
     {
       "id": "acb7",
@@ -51,8 +51,9 @@
       "pickup": "Ruiru",
       "destination": "Kenyatta road",
       "number_of_passangers": 3,
-      "reported": false,
-      "comment_on_repoort": ""
+      "reported": true,
+      "comment_on_repoort": "",
+      "comment_on_report": "The driver was too moody"
     },
     {
       "id": "ef06",
